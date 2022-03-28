@@ -27,7 +27,7 @@ mute.addEventListener("click", function () {
 	if (mute.innerHTML == "Mute") {
 		mute.innerHTML = "Unmute";
 		video.volume = 0;
-		document.querySelector("#volume").innerHTML = video.volume * 100 + '%';
+		document.querySelector("#volume").innerHTML = 0;
 
 	} else {
 		mute.innerHTML = "Mute";
