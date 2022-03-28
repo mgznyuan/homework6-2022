@@ -1,8 +1,6 @@
 var video;
 video = document.getElementById('player1');
 
-
-
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
 
@@ -27,13 +25,13 @@ mute.addEventListener("click", function () {
 		mute.innerHTML = "Unmute";
 		video.volume = 0;
 		document.querySelector("#volume").innerHTML = video.volume;
+		console.log(video.volume);
 
 	} else {
 		mute.innerHTML = "Mute";
 		if (typeof slider_vol !== 'undefined') {
-			console.log(slider_vol);
-			document.querySelector("#volume").innerHTML = slider_vol * 100 + '%';
 			video.volume = slider_vol;
+			document.querySelector("#volume").innerHTML = slider_vol * 100 + '%';
 		}
 		else {
 			document.querySelector("#volume").innerHTML = '100%';
@@ -95,8 +93,7 @@ slider.addEventListener("change", function (e) {
 	video.volume = e.currentTarget.value / 100;
 	console.log(video.volume);
 	document.querySelector("#volume").innerHTML = video.volume * 100 + '%';
-	slider_vol = event.currentTarget.value / 100;
-	console.log(slider_vol);
+	slider_vol = e.currentTarget.value / 100;
 })
 
 var video_class = document.querySelector(".video")
