@@ -32,6 +32,7 @@ mute.addEventListener("click", function () {
 	} else {
 		mute.innerHTML = "Mute";
 		video.volume = 1;
+		document.querySelector("#volume").innerHTML = video.volume * 100 + '%';
 	}
 });
 
